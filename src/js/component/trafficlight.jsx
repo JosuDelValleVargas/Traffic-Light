@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 const TrafficLight = () => {
 
@@ -10,7 +10,7 @@ function encendido(){
     }else{
         setBrillo("bg-light")
     }
-}
+
 	return (
 
          <div className="container">
@@ -18,8 +18,8 @@ function encendido(){
                 <p className="bg-red text-primary rounded-circle text-center " style={{borderRadius:'50px'}}>Hola </p>  
             </div>
             
-             <p>Hola </p>  
             <p>Hola </p>  
+            <p>Hola vamos a ver </p>  
 
         </div>
         // <div className="text-center">
@@ -34,9 +34,11 @@ function encendido(){
     );
 };
 
+};
 
 
 
 
 
-export default TrafficLight ;
+
+export default TrafficLight 
