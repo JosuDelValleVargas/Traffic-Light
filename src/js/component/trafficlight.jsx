@@ -2,45 +2,77 @@ import React, { useState } from "react";
 
 const TrafficLight = () => {
 
-    const [brillo, setBrillo] = useState("bg-dark")
+    const [brillo1, setBrillo1] = useState("")
+    const [brillo2, setBrillo2] = useState("")
+    const [brillo3, setBrillo3] = useState("")
 
-    function encendido() {
-        // if (brillo === "bg-dark") {
-        //     setBrillo("bg-dark")
+    function encendido1() {
+        // if (brillo === "") {
+        //     setBrillo("0 0 40px #fff")
         // } else {
-        //     setBrillo("bg-light")
+        //     setBrillo("")
         // }
 
         // condicion ? true : false
-        brillo === "bg-dark"
-            ? setBrillo("bg-dark")
-            : setBrillo("bg-light")
-        return (
+        brillo1 === ""
+            ? setBrillo1("0 0 100px #fff")
+            : null
 
-            <div className="container">
-                <div className="bg-dark height:'20px'" style={{ borderRadius: '50px' }} >
-                    <a href="#" className={"bg-red text-primary rounded-circle btn"+brillo} style={{ borderRadius: '50px' }} onClick={encendido}> {brillo} </a>
-                </div>
+        brillo2 !== ""
+            ? setBrillo2("")
+            : null
 
-                <p>Hola </p>
-                <p>Hola vamos a ver </p>
+        brillo3 !== ""
+            ? setBrillo3("")
+            : null
 
-            </div>
-            // <div className="text-center">
-            // 	<div className="container text-center" style={{backgroundColor:"black", height:"100px",width:"20px"}}></div>
-
-            // 	<div className="container text-center" style={{backgroundColor:"black", height:"400px",width:"150px"}}>
-            //         <button style={{backgroundColor:"red", borderRadius:"50px",height:"20%",width:"65%",marginBottom:"30px",marginTop:"40px"}}></button>
-            //         <button style={{backgroundColor:"yellow", borderRadius:"50px",height:"20%",width:"65%",marginBottom:"30px"}}></button>
-            //         <button style={{backgroundColor:"green", borderRadius:"50px",height:"20%",width:"65%",marginBottom:"30px"}}></button>
-            //     </div>
-            // </div>
-        );
     };
 
+    function encendido2() {
+        brillo2 === ""
+            ? setBrillo2("0 0 100px #fff")
+            : null
+
+        brillo1 !== ""
+            ? setBrillo1("")
+            : null
+
+        brillo3 !== ""
+            ? setBrillo3("")
+            : null
+
+    };
+
+    function encendido3() {
+        brillo3 === ""
+            ? setBrillo3("0 0 100px #fff")
+            : null
+
+        brillo1 !== ""
+            ? setBrillo1("")
+            : null
+
+        brillo2 !== ""
+            ? setBrillo2("")
+            : null
+    };
+
+
+
+    return (
+        <div className="w-50 mx-auto">
+            <div className="bg-dark mx-auto" style={{ height: "120px", width: "80px" }}></div>
+            <div className="w-50 mx-auto py-4 d-flex flex-column align-items-center bg-dark rounded-5">
+                <div className="bg-danger rounded-circle my-2 " style={{ height: "200px", width: "200px", boxShadow: brillo1 }} onClick={encendido1}></div>
+                <div className="bg-warning rounded-circle my-2" style={{ height: "200px", width: "200px", boxShadow: brillo2 }} onClick={encendido2}></div>
+                <div className="bg-success rounded-circle my-2" style={{ height: "200px", width: "200px", boxShadow: brillo3 }} onClick={encendido3}></div>
+            </div>
+        </div>
+
+    );
+
+
 };
-
-
 
 
 
